@@ -7,16 +7,28 @@ import com.example.dependency_injection_android.MainActivity;
 import javax.inject.Inject;
 
 public class Car {
-    private Engine engine;
-    private Wheels wheels;
+    @Inject    //field inject
+    Wheels wheels;
+    Engine engine;
+
+
     private String TAG = MainActivity.class.getSimpleName();
 
     @Inject
-    public Car(Engine engine, Wheels wheels){
+    public Car(Engine engine) {   //constructor inject
         this.engine = engine;
-        this.wheels = wheels;
+        Log.d(TAG, "Car Constructor");
     }
-    public void start(){
-        Log.d(TAG,"Car is running..");
+
+    @Inject
+    public void passCarToRemote(Remote remote) {   //method DI
+        Log.d(TAG, "Car is passing to remote");
+        remote.setCar(this);
+    }
+
+    public void start() {
+        engine.start();
+        wheels.move();
+        Log.d(TAG, "Car is running..");
     }
 }
