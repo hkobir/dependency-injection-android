@@ -12,3 +12,18 @@ titely cuppoled created object inside a class.
 
 # --in this repository manual DI example are given into test directory
 # --then whole project is example of Automatic DI with dagger
+
+# DI for this project are organized with following topics with dagger:
+
+- Android dependency injection with manual purpose
+- Using @Inject and @Component
+- FIELD INJECTION
+- METHOD INJECTION using @Inject
+- FIELD INJECTION in a class
+- @MODULE and @PROVIDES annotation
+- @BINDS and @MODULE to create objct
+- Injecting field values at runtime
+- @COMPONENT.BUILDER, @BINDINSTANCE
+- @SINGLETON annotation
+- Relation between @SINGLETON and @COMPONENT to create same instance everytime
+
