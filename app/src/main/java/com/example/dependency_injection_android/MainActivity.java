@@ -13,7 +13,10 @@ import javax.inject.Inject;
 
 public class MainActivity extends AppCompatActivity {
     @Inject
-    Car car; //variable or field injection
+    Car car1; //variable or field injection
+
+    @Inject
+    Car car2; //variable or field injection
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,9 +27,13 @@ public class MainActivity extends AppCompatActivity {
 
     private void startUp() {
         //Using dagger automatic DI
-        CarComponent carComponent = DaggerCarComponent.create();
+//        CarComponent carComponent = DaggerCarComponent.create(); //without argument in module constructor
+        CarComponent carComponent = ((DemoApplication) getApplication()).getCarComponent();
+
+
 //        car = carComponent.getCar(); //constructor injection
         carComponent.inject(this);
-        car.start();
+        car1.start();
+        car2.start();
     }
 }

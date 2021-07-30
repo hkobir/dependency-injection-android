@@ -10,12 +10,14 @@ public class Car {
     @Inject    //field inject
     Wheels wheels;
     Engine engine;
+    Driver driver;
 
 
     private String TAG = MainActivity.class.getSimpleName();
 
     @Inject
-    public Car(Engine engine) {   //constructor inject
+    public Car(Driver driver, Engine engine) {   //constructor inject
+        this.driver = driver;
         this.engine = engine;
         Log.d(TAG, "Car Constructor");
     }
@@ -29,6 +31,6 @@ public class Car {
     public void start() {
         engine.start();
         wheels.move();
-        Log.d(TAG, "Car is running..");
+        Log.d(TAG, "Car is running.. with driver: "+driver);
     }
 }
