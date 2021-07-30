@@ -3,7 +3,7 @@ DI, Android, Dagger
 
 ## Instruction : 
 Android dependency Injection: Provide dependent object outside of the class rather than 
-titely cuppoled created object inside a class.
+tightly coupled as created object inside a class.
 
 =>2 types of DI: 1)Manual DI 2)Automatic DI
 
@@ -27,3 +27,6 @@ titely cuppoled created object inside a class.
 - @SINGLETON annotation
 - Relation between @SINGLETON and @COMPONENT to create same instance everytime
 
+# Recources:
+- DI and Dagger2: https://en.proft.me/2016/12/28/getting-started-dependency-injection-android-using/
+- when should use DI: http://tutorials.jenkov.com/dependency-injection/when-to-use-dependency-injection.html
